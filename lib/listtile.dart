@@ -35,9 +35,10 @@ class _SchedulesState extends State<Schedules> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.only(left: 60,top: 60),
-                    child: Image.asset("assets/reminder-pills-512.webp",
-                    height: 50,
-                    width: 50,)
+                    child: Image.asset("asset/clock.png",
+                    
+                    height: 60,
+                    width: 60,)
                   ),
                  const Padding(
                     padding: EdgeInsets.only(left: 50,top: 60),
@@ -51,20 +52,26 @@ class _SchedulesState extends State<Schedules> {
                       ),
                     ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 50,left: 100),
-                    child: IconButton(onPressed: (){
-                      Navigator.pop(context);
-                    }, 
-                    icon: const Icon(Icons.add,color: Colors.white,size: 30,))
+                  // Padding(
+                  //   padding: const EdgeInsets.only(top: 50,left: 100),
+                  //   child: IconButton(onPressed: (){
+                  //     Navigator.pop(context);
+                  //   }, 
+                  //   icon: const Icon(Icons.add,color: Colors.white,size: 30,))
                     
                     
-                  )
+                  // )
                  
                 ],
               ),
         ),
         elevation: 0,
+        actions: [ IconButton(onPressed: (){
+          Navigator.pop(context);
+        }, 
+        icon: const Icon(Icons.add,color: Colors.black,size: 30,))
+
+        ],
       ),
       body: SafeArea(
         child: ListView.builder(

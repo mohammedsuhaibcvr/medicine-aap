@@ -42,8 +42,8 @@ class Setmedication extends StatelessWidget {
                         ),
                       ),
                     ),
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40),
+                   const Padding(
+                      padding: EdgeInsets.only(top: 40),
                       child: Text(
                         "set up medications",
                         style: TextStyle(
@@ -59,13 +59,13 @@ class Setmedication extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 50, left: 45),
                           child: Image.network(
                             "https://cdn4.iconfinder.com/data/icons/flu/1000/Flu-06-64.png",
-                            color: Color.fromARGB(255, 17, 103, 20),
+                            color:const Color.fromARGB(255, 17, 103, 20),
                             height: 50,
                             width: 50,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 50, left: 14),
+                       const Padding(
+                          padding:  EdgeInsets.only(top: 50, left: 14),
                           child: Text(
                             "Track all your medications in \n one place",
                             style: TextStyle(fontSize: 16, color: Colors.white),
@@ -79,13 +79,13 @@ class Setmedication extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 50, left: 45),
                           child: Image.network(
                             "https://cdn2.iconfinder.com/data/icons/ios-7-icons/50/alarm_clock-64.png",
-                            color: Color.fromARGB(255, 17, 103, 20),
+                            color:const Color.fromARGB(255, 17, 103, 20),
                             height: 40,
                             width: 40,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 50, left: 14),
+                       const Padding(
+                          padding:  EdgeInsets.only(top: 50, left: 14),
                           child: Text(
                             "Set a Schedule and get reminders",
                             style: TextStyle(fontSize: 16, color: Colors.white),
@@ -99,13 +99,13 @@ class Setmedication extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 50, left: 45),
                           child: Image.network(
                             "https://cdn1.iconfinder.com/data/icons/ionicons-outline-vol-2/512/warning-outline-64.png",
-                            color: Color.fromARGB(255, 17, 103, 20),
+                            color: const Color.fromARGB(255, 17, 103, 20),
                             height: 50,
                             width: 50,
                           ),
                         ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 50, left: 14),
+                        const  Padding(
+                          padding: EdgeInsets.only(top: 50, left: 14),
                           child: Text(
                             "Learn about potential intractions\n between medications your list",
                             style: TextStyle(fontSize: 16, color: Colors.white),
@@ -127,10 +127,10 @@ class Setmedication extends StatelessWidget {
                                 borderRadius: BorderRadius.circular(30)
                               ),
                               backgroundColor:
-                                  Color.fromARGB(255, 17, 213, 141),
+                                const  Color.fromARGB(255, 17, 213, 141),
                             ),
                             onPressed: () {},
-                            child: Text("Add a medications")),
+                            child:  const Text("Add a medications")),
                       ),
                     )
                   ],

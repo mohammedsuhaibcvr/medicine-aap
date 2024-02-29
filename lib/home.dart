@@ -6,6 +6,9 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenheight = MediaQuery.of(context).size.height;
+    double screenwidth = MediaQuery.of(context).size.width;
+  
     return Scaffold(
       body: SizedBox(
         height: double.infinity,
@@ -25,7 +28,7 @@ class Home extends StatelessWidget {
                       children: [
                         CircleAvatar(
                           radius: 30,
-                          backgroundImage: AssetImage("assets/profile.jpg"),
+                          backgroundImage: AssetImage("asset/medicine.png"),
                         ),
                         SizedBox(
                           width: 15,
@@ -85,10 +88,10 @@ class Home extends StatelessWidget {
                         child: Container(
                           clipBehavior: Clip.hardEdge,
                           height: 170,
-                          width: 170,
+                          width: 160,
                           decoration: const BoxDecoration(),
                           child: Image.asset(
-                            "assets/medicine.png",
+                            "asset/medicine.png",
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -102,7 +105,7 @@ class Home extends StatelessWidget {
               top: 275,
               child: Container(
                 height: 600,
-                width: 394,
+                width: screenwidth,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(40),
                   color: Colors.white,
@@ -129,20 +132,21 @@ class Home extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(
+                  const  SizedBox(
                       height: 65,
                     ),
                     Column(
                       children: [
-                        Image.asset("assets/clock.png",
-                        height: 60,
-                        width: 60,
+                        Image.asset(
+                          "asset/clock.png",
+                          height: 60,
+                          width: 60,
                         ),
-                        Text("No Reminder Found!...",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18
-                        ),)
+                        const Text(
+                          "No Reminder Found!...",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 18),
+                        )
                       ],
                     )
                   ],
@@ -162,7 +166,7 @@ class Home extends StatelessWidget {
             // )
           ],
         ),
-    ),
-);
-}
+      ),
+    );
+  }
 }

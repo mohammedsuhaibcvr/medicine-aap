@@ -72,13 +72,13 @@ class _FluidNavBarDemoState extends State {
     setState(() {
       switch (index) {
         case 0:
-          _child =  Home();
+          _child =  const Home();
           break;
         case 1:
-          _child = AddMedcine();
+          _child =const AddMedcine();
           break;
         case 2:
-          _child =  Profile();
+          _child = const Profile();
           break;
       }
       _child = AnimatedSwitcher(

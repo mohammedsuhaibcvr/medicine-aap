@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:pills/home.dart';
 import 'package:pills/order.dart';
 import 'package:pills/splash.dart';
 import 'package:pills/todo.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      home:PSplash  (),
+      home:PSplash(),
     );
   }
 }

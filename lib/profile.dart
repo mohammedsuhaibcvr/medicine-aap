@@ -1,114 +1,263 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_timeline_calendar/timeline/flutter_timeline_calendar.dart';
+import 'package:pills/changepass.dart';
+import 'package:pills/editprofile.dart';
+
+import 'package:pills/loginpage.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
 
   @override
   Widget build(BuildContext context) {
+    double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: SizedBox(
+      body: Container(
         height: double.infinity,
         width: double.infinity,
-        child: Stack(
+        decoration: const BoxDecoration(
+            gradient: LinearGradient(
+          begin: Alignment.topCenter,
+          end: Alignment(0.8, 1),
+          colors: <Color>[
+            Color(0xFFC5CAE9),
+            Color(0xFF9FA8DA),
+            Color(0xFF7986CB),
+            Color(0xFF5C6BC0),
+            Color(0xFF3F51B5),
+          ],
+          tileMode: TileMode.mirror,
+        )),
+        child: Column(
           children: [
-            Container(
-                width: double.infinity,
-                height: 260,
-                color: const Color.fromARGB(255, 249, 121, 163),
-                child: const Column(
-                  children: [
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 4),
-                          child: CircleAvatar(),
-                        ),
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Column(
-                            children: [
-                              Padding(
-                                padding: EdgeInsets.only(top: 9, left: 1),
-                                child: Text(
-                                  "KILLER",
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 15,
-                                  ),
-                                ),
-                              ),
-                              Padding(
-                                padding: EdgeInsets.only(left: 3, top: 4),
-                                child: Text(
-                                  "WHALES",
-                                  style: TextStyle(
-                                      color: Colors.white, fontSize: 20),
-                                ),
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 50, left: 10),
-                          child: Text(
-                            "CREATE",
-                            style: TextStyle(color: Colors.white),
-                          ),
-                        ),
-                      ],
-                    ),
-                    Row(
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(left: 10, top: 5),
-                          child: Text(
-                            "NEW SCHEDULE",
-                            style: TextStyle(color: Colors.white, fontSize: 17),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                )),
-            Positioned(
-              top: 230,
-              child: Container(
-                height: 500,
-                width: 500,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(30),
+            const SizedBox(
+              height: 70,
+            ),
+            const Text(
+              "Profile",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
                   color: Colors.white,
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      height: 150,
-                      width: double.infinity,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: TimelineCalendar(
-                        calendarType: CalendarType.GREGORIAN,
-                        calendarLanguage: "en",
-                        calendarOptions: CalendarOptions(
-                            viewType: ViewType.DAILY,
-                            headerMonthElevation: 0,
-                            headerMonthBackColor: Colors.transparent),
-                      ),
-                    ),
-                  ],
+                  fontSize: 21),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            CircleAvatar(
+              radius: 60,
+              backgroundColor: Colors.white,
+              child: InkWell(
+                onTap: () {
+                  showDialog(
+                    context: context,
+                    builder: (ctx) => AlertDialog(
+                        clipBehavior: Clip.hardEdge,
+                        title: Image.asset(
+                          "assets/profile.jpg",
+                          fit: BoxFit.cover,
+                        )),
+                  );
+                },
+                child: const CircleAvatar(
+                  radius: 57,
+                  backgroundImage: AssetImage("assets/profile.jpg"),
                 ),
               ),
             ),
+            const SizedBox(
+              height: 15,
+            ),
+            const Text(
+              "Shuhaib Malik",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 18),
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const Text(
+              "shuhaibmalik@gmail.com",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 18),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            const Text(
+              "7510115506",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 18),
+            ),
+            const SizedBox(
+              height: 7,
+            ),
+            const Text(
+              "kochi , Kakkanad",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                  fontSize: 18),
+            ),
+            const SizedBox(
+              height: 30,
+            ),
+            SizedBox(
+              width: 130,
+              height: 45,
+              child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      backgroundColor: Colors.transparent,
+                      elevation: 1),
+                  //
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const EditProfile()));
+                  },
+                  child: const Text(
+                    "Edit Profile",
+                    style: TextStyle(
+                        fontWeight: FontWeight.bold, color: Colors.white),
+                  )),
+            ),
+            const SizedBox(
+              height: 40,
+            ),
+            SizedBox(
+                width: 310,
+                height: 55,
+                child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 1,
+                        backgroundColor: Colors.transparent),
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => ChangePass()));
+                    },
+                    icon: const Icon(
+                      Icons.key,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                    label:  Row(
+                      children: [
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          "Change Password",
+                          style: TextStyle(
+                            color: Colors.black,
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        SizedBox(width:screenwidth*0.15),
+                        Icon(
+                          Icons.arrow_forward,
+                          size: 30,
+                          color: Colors.black
+                        )
+                      ],
+                    ))),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+                width: 310,
+                height: 55,
+                child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 1,
+                        backgroundColor: Colors.transparent),
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => LoginPage( )
+                          ),
+                          );
+                    },
+                    icon: const Icon(
+                      Icons.logout,
+                      size: 30,
+                      color: Colors.black,
+                    ),
+                    label:  Row(
+                      children: [
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          "Log Out",
+                          style: TextStyle(
+                            color: Colors.black,
+                              fontWeight: FontWeight.bold, fontSize: 16),
+                        ),
+                        SizedBox
+                        (width:screenwidth*0.34
+                        ),
+                        Icon(
+                          Icons.arrow_forward,
+                          color: Colors.black,
+                          size: 30,
+                        )
+                      ],
+                    ))),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+                width: 310,
+                height: 55,
+                child: ElevatedButton.icon(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10)),
+                        elevation: 1,
+                        backgroundColor: Colors.transparent),
+                    onPressed: () {},
+                    icon: const Icon(
+                      Icons.delete_forever,
+                      size: 30,
+                      color: Colors.red,
+                    ),
+                    label:  Row(
+                      children: [
+                        SizedBox(
+                          width: 8,
+                        ),
+                        Text(
+                          "Delete Account",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              color: Colors.red,
+                              fontSize: 16),
+                      ),
+                 SizedBox(
+                  width: screenwidth*0.2,
+                  ),
+                  Icon(
+                 Icons.arrow_forward,
+                 size: 30,
+                  color: Colors.red,
+                )
+             ],
+           ))),
           ],
         ),
-      ),
+      )
     );
   }
 }
