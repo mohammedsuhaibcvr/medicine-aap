@@ -3,11 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:pills/addmedicine.dart';
 import 'package:pills/home.dart';
 import 'package:pills/profile.dart';
-
-
-
-
-
 void main() => runApp(const FluidNavBarDemo());
 
 class  FluidNavBarDemo extends StatefulWidget {
@@ -37,7 +32,7 @@ class _FluidNavBarDemoState extends State {
         backgroundColor: const Color(0xFF75B7E1),
         extendBody: true,
         body: _child,
-        bottomNavigationBar: FluidNavBar(
+        bottomNavigationBar:FluidNavBar(
           icons: [
             FluidNavBarIcon(
                 icon: Icons.home,
@@ -53,7 +48,7 @@ class _FluidNavBarDemoState extends State {
                 extras: {"label": "Profile"}),
            
           ],
-          onChange: _handleNavigationChange,
+          onChange:_handleNavigationChange,
           style: const FluidNavBarStyle(iconUnselectedForegroundColor: Colors.black,
           barBackgroundColor: Color(0xFF7986CB),
           ),
