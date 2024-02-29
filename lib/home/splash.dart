@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:pills/splash1.dart';
+import 'package:pills/home/splash1.dart';
 
 
 

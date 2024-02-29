@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:pills/splash2.dart';
-import 'package:pills/splash3.dart';
+import 'package:pills/home/splash3.dart';
 
-class SpOne extends StatelessWidget {
-  const SpOne({super.key});
+
+class SpTwo extends StatelessWidget {
+  const SpTwo({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(height: double.infinity,
-      width: double.infinity,
-       decoration: const BoxDecoration(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+         decoration: const BoxDecoration(
         gradient: LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment(0.8, 1),
@@ -25,36 +26,35 @@ class SpOne extends StatelessWidget {
         )),
         child: Center(
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            //  mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const SizedBox(
                 height: 140,
               ),
               const CircleAvatar(
+                backgroundColor: Colors.amber,
                 radius: 90,
-                child: Image(image: AssetImage("asset/Doctors.jpg"))
+                
+               backgroundImage: AssetImage("asset/capsules.jpg"),
               ),
               const SizedBox(
                 height: 25,
               ),
-              Text(
-                "Set Reminders.",
-                style: TextStyle(
-                    fontSize: 19,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.indigo[900]),
-              ),
+              
               const SizedBox(
                 height: 10,
               ),
               const Text(
-                "Never forget to take ",
-                style: TextStyle(fontSize: 17, color: Colors.grey),
+                "Add medicines by yourself ",
+                style: TextStyle(fontSize: 17, color: Colors.white),
               ),
               const Text(
-                "your medicines on time.",
-                style: TextStyle(fontSize: 17, color: Colors.grey),
+                "Or Scan Prescription",
+                style: TextStyle(fontSize: 17, color: Colors.white),
+              ),
+             const SizedBox(height: 10,),
+               const Text(
+                "Its easy and simple ",
+                style: TextStyle(fontSize: 15, color: Colors.black),
               ),
               const SizedBox(
                 height: 50,
@@ -67,7 +67,7 @@ class SpOne extends StatelessWidget {
                     width: 13,
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(60),
-                        color: Colors.green),
+                        color: Colors.grey[400]),
                   ),
                   Padding(
                     padding: const EdgeInsets.only(left: 15),
@@ -76,7 +76,7 @@ class SpOne extends StatelessWidget {
                       width: 13,
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(60),
-                          color: Colors.grey[400]),
+                          color: Colors.green),
                     ),
                   ),
                   Padding(
@@ -103,8 +103,7 @@ class SpOne extends StatelessWidget {
                           borderRadius: BorderRadius.circular(30)),
                       backgroundColor: Colors.teal[500]),
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const SpTwo()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SpThree()));
                   },
                   label: const Text(
                     "Next",
@@ -118,17 +117,16 @@ class SpOne extends StatelessWidget {
               ),
               TextButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const SpThree()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const SpThree()));
                   },
                   child: const Text(
                     "Skip",
                     style: TextStyle(color: Colors.grey, fontSize: 17),
-               )
-            )  
+                  ))
             ],
           ),
-        ), 
-      ),  
-);       
+        ),
+    ),
+);
 }
 }

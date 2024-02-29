@@ -1,6 +1,6 @@
 import 'package:fluid_bottom_nav_bar/fluid_bottom_nav_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:pills/addmedicine.dart';
+import 'package:pills/user/addmed/addmedicine.dart';
 import 'package:pills/home.dart';
 import 'package:pills/profile.dart';
 void main() => runApp(const FluidNavBarDemo());

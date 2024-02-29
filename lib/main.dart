@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:pills/home.dart';
 import 'package:pills/order.dart';
-import 'package:pills/splash.dart';
-import 'package:pills/todo.dart';
+import 'package:pills/home/splash.dart';
+import 'package:pills/todo/todo.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

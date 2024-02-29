@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pills/fluidnavbar.dart';
+import 'package:pills/home/navbar/fluidnavbar.dart';
 import 'package:pills/loginpage.dart';
 
 

@@ -1,11 +1,8 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:pills/listtile.dart';
-import 'package:pills/numbdersteber.dart';
-import 'package:pills/timedemo.dart';
-
-
-
+import 'package:pills/home/addmed/listtile.dart';
+import 'package:pills/home/addmed/numbdersteber.dart';
+import 'package:pills/home/addmed/timedemo.dart';
 
 class AddMedcine extends StatefulWidget {
   const AddMedcine({super.key});
@@ -51,55 +48,42 @@ class _AddMedcineState extends State<AddMedcine> {
             // Color(0xFF3F51B5),
           ],
           tileMode: TileMode.mirror,
-        )                                                                               
-        ),                                                                             
-        child: Expanded(
-          child: Row(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 60,top: 60),
-                      child: Image.asset("asset/clock.png",
-                      height: 50,
-                      width: 50,)
-                    ),
-                   const Padding(
-                      padding: EdgeInsets.only(left: 50,top: 60),
-                      child: Center(
-                        child: Text(
-                          "Capsule",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.normal),
-                        ),
+        )),
+        child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(left: 60,top: 60),
+                    child: Image.asset("assets/reminder-pills-512.webp",
+                    height: 50,
+                    width: 50,)
+                  ),
+                 const Padding(
+                    padding: EdgeInsets.only(left: 50,top: 60),
+                    child: Center(
+                      child: Text(
+                        "Capsule",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 18,
+                            fontWeight: FontWeight.normal),
                       ),
                     ),
-                    //  TextButton(onPressed: (){
-                    //    Navigator.push(context, MaterialPageRoute(builder: (context)=>const Schedules()));
-                    //  },
-                    //   child: const Text("Done",
-                    //   style: TextStyle(
-                    //    fontSize: 18,
-                    //    color: Colors.amber,
-                    //    fontWeight: FontWeight.bold
-                    //   ),)),
-                  ],
-                ),
-        ),
-        ),
-        actions: [ TextButton(onPressed: (){
-                       Navigator.push(context, MaterialPageRoute(builder: (context)=>const Schedules()));
-                     },
-                      child: const Text("Done",
-                      style: TextStyle(
-                       fontSize: 18,
-                       color: Colors.white,
-                       fontWeight: FontWeight.bold
-                      ),)),
-          
-        ],
-        elevation: 0,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 100,top: 60),
+                    child: TextButton(onPressed: (){
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>const Schedules()));
+                    },
+                     child: const Text("Done",
+                     style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold
+                     ),))
+                  ),
+                ],
+              ),
+        ),elevation: 0,
       ),
       body: Container(
         height: double.infinity,
@@ -141,15 +125,13 @@ class _AddMedcineState extends State<AddMedcine> {
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
                       enabledBorder: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white)
-                          ),
+                          borderSide: BorderSide(color: Colors.white)),
                       prefixIcon: Icon(
                         Icons.medical_services_outlined,
                         color: Color.fromARGB(255, 18, 114, 21),
                       ),
                       labelText: "Enter Medicine Name",
-                      labelStyle: TextStyle(color: Colors.white)
-                ),
+                      labelStyle: TextStyle(color: Colors.white)),
                 ),
               ),
              const Padding(
@@ -165,9 +147,8 @@ class _AddMedcineState extends State<AddMedcine> {
                       ),
                       labelText: "Description",
                       labelStyle: TextStyle(color: Colors.white)),
-
-                ),                                                  
-              ),                                                    
+                ),
+              ),
              const SizedBox(
                 height: 15,
               ),
@@ -191,9 +172,9 @@ class _AddMedcineState extends State<AddMedcine> {
                                 min: 0,
                                 max: 30,
                                 step: 1,
-                                onChanged: (Value) {
+                                onChanged: (value) {
                                   setState(() {
-                                    _selectedNumber = Value;
+                                    _selectedNumber = value;
                                   });
                                 },
                               )));
@@ -240,12 +221,11 @@ class _AddMedcineState extends State<AddMedcine> {
                           border: OutlineInputBorder(),
                           labelText: "Medicine type",
                           labelStyle: TextStyle(color: Colors.white),
-                          suffixIconColor: Colors.white
-                          ),                             
-                    ),                                  
-                  ),                                   
-                ),                                    
-              ),                                     
+                          suffixIconColor: Colors.white),
+                    ),
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 15,
               ),
@@ -273,9 +253,9 @@ class _AddMedcineState extends State<AddMedcine> {
                           labelStyle: TextStyle(color: Colors.white),
                           suffixIconColor: Colors.white),
                     ),
-                  ), 
-                ),  
-              ),   
+                  ),
+                ),
+              ),
               const SizedBox(
                 height: 15,
               ),
@@ -303,13 +283,12 @@ class _AddMedcineState extends State<AddMedcine> {
                     backgroundColor: Colors.green[600]
                   ),
                   onPressed: (){},
-                 child: const Text("Submit")
-                  ),        
-              )            
+                 child: const Text("Submit")),
+              )
             ],
-          ),             
-        ),              
-     ),                
-);                    
-}
+          ),
+        ),
+      ),
+    );
+  }
 }

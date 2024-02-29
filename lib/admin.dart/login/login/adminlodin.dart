@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:pills/home/navbar/fluidnavbar.dart';
-import 'package:pills/forget.dart';
-import 'package:pills/signup%20padge.dart';
-
+import 'package:pills/admin.dart/login/login/rest.dart';
+import 'package:pills/admin.dart/login/login/signup.dart';
 final _formKey = GlobalKey<FormState>();
 
-class LoginPage extends StatelessWidget {
-  LoginPage({super.key});
 
+class AdminLoginPage extends StatelessWidget {
+  AdminLoginPage({super.key});
+  
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
@@ -17,19 +16,8 @@ class LoginPage extends StatelessWidget {
       body: Container(
         height: double.infinity,
         width: double.infinity,
-        decoration: const BoxDecoration(
-            gradient: LinearGradient(
-          begin: Alignment.topCenter,
-          end: Alignment(0.8, 1),
-          colors: <Color>[
-            Color(0xFFC5CAE9),
-            Color(0xFF9FA8DA),
-            Color(0xFF7986CB),
-            Color(0xFF5C6BC0),
-            Color(0xFF3F51B5),
-          ],
-          tileMode: TileMode.mirror,
-        )),
+        decoration: BoxDecoration(
+          color: Colors.teal[700]),
         child: Form(
           key: _formKey,
           child: SingleChildScrollView(
@@ -62,8 +50,7 @@ class LoginPage extends StatelessWidget {
                   height: 80,
                 ),
                 Padding(
-                  padding:
-                      const EdgeInsets.only(right: 45, left: 45, bottom: 15),
+                  padding: const EdgeInsets.only(right: 45, left: 45, bottom: 15),
                   child: TextFormField(
                     controller: emailController,
                     validator: (value) {
@@ -80,15 +67,23 @@ class LoginPage extends StatelessWidget {
                           return null;
                         }
                       }
+                      return null;
                     },
                     decoration: const InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white
+                        )
+                      ),
                         filled: true,
-                        labelText: "Email",
-                        labelStyle: TextStyle(color: Colors.white),
-                        hintText: "@gmail.com",
-                        hintStyle: TextStyle(color: Colors.white)),
+                         labelText: "Email",
+                         labelStyle: TextStyle(
+                          color: Colors.white
+                         ),
+                          hintText: "@gmail.com",
+                          hintStyle: TextStyle(
+                            color: Colors.white
+                          )),
                   ),
                 ),
                 Padding(
@@ -101,8 +96,7 @@ class LoginPage extends StatelessWidget {
                       }
                       if (value.isNotEmpty) {
                         String pattern =
-                            r"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$";
-
+                            r'^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$';
                         RegExp regEx = RegExp(pattern);
                         if (!regEx.hasMatch(value)) {
                           return "enter valid password";
@@ -110,15 +104,23 @@ class LoginPage extends StatelessWidget {
                           return null;
                         }
                       }
+                      return null;
                     },
-                    decoration: const InputDecoration(
-                        enabledBorder: UnderlineInputBorder(
-                            borderSide: BorderSide(color: Colors.white)),
+                    decoration:const InputDecoration(
+                      enabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: Colors.white
+                        )
+                      ),
                         filled: true,
                         labelText: "Password",
-                        labelStyle: TextStyle(color: Colors.white),
+                        labelStyle: TextStyle(
+                          color: Colors.white
+                        ),
                         hintText: "enter password",
-                        hintStyle: TextStyle(color: Colors.white)),
+                        hintStyle: TextStyle(
+                          color: Colors.white
+                        )),
                   ),
                 ),
                 const SizedBox(
@@ -142,28 +144,14 @@ class LoginPage extends StatelessWidget {
                       height: 75,
                       width: 75,
                       decoration: BoxDecoration(
-                          gradient: const LinearGradient(
-                            begin: Alignment.topRight,
-                            end: Alignment(0.5, 1),
-                            colors: <Color>[
-                              Color(0xFFC5CAE9),
-                              Color(0xFF9FA8DA),
-                              Color(0xFF7986CB),
-                              Color(0xFF5C6BC0),
-                              Color(0xFF3F51B5)
-                            ],
-                            tileMode: TileMode.mirror,
-                          ),
+                          
                           borderRadius: BorderRadius.circular(90),
-                          color: Colors.white),
+                          color: Colors.green[300]),
                       child: IconButton(
                           onPressed: () {
+                            
                             if (_formKey.currentState!.validate()) {
-                              Navigator.pushReplacement(
-                                  context,
-                                  MaterialPageRoute(
-                                      builder: (context) =>
-                                          const FluidNavBarDemo()));
+                             // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FluidNavBarDemo()));
                             }
                           },
                           icon: const Icon(
@@ -187,7 +175,7 @@ class LoginPage extends StatelessWidget {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Signpage()));
+                                    builder: (context) => AdminSignUp()));
                           },
                           child: const Text(
                             "Sign up",
@@ -201,21 +189,18 @@ class LoginPage extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 35),
                       child: InkWell(
-                        onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const FogotPassword()));
-                        },
-                        child: const Text(
-                          "forget Password",
-                          style: TextStyle(
-                              decoration: TextDecoration.underline,
-                              color: Colors.white,
-                              fontSize: 14,
-                              fontWeight: FontWeight.normal),
-                        ),
-                      ),
+                          onTap: () {
+                           
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>const AdminFogotPassword()));
+                          },
+                          child: const Text(
+                            "forget Password",
+                            style: TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Colors.white,
+                                fontSize: 14,
+                                fontWeight: FontWeight.normal),
+                          ),),
                     ),
                   ],
                 ),
