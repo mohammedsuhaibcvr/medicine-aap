@@ -53,14 +53,14 @@ class Profile extends StatelessWidget {
                     builder: (ctx) => AlertDialog(
                         clipBehavior: Clip.hardEdge,
                         title: Image.asset(
-                          "assets/profile.jpg",
+                          "asset/Docotrs.jpg",
                           fit: BoxFit.cover,
                         )),
                   );
                 },
                 child: const CircleAvatar(
                   radius: 57,
-                  backgroundImage: AssetImage("assets/profile.jpg"),
+                  backgroundImage: AssetImage("asset/Doctors.jpg"),
                 ),
               ),
             ),
@@ -68,7 +68,7 @@ class Profile extends StatelessWidget {
               height: 15,
             ),
             const Text(
-              "Shuhaib Malik",
+              "Suhaib Malik",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -78,7 +78,7 @@ class Profile extends StatelessWidget {
               height: 10,
             ),
             const Text(
-              "shuhaibmalik@gmail.com",
+              "suhaibmalik@gmail.com",
               style: TextStyle(
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
@@ -154,17 +154,17 @@ class Profile extends StatelessWidget {
                     ),
                     label:  Row(
                       children: [
-                        SizedBox(
+                      const  SizedBox(
                           width: 8,
                         ),
-                        Text(
+                        const Text(
                           "Change Password",
                           style: TextStyle(
                             color: Colors.black,
                               fontWeight: FontWeight.bold, fontSize: 16),
                         ),
                         SizedBox(width:screenwidth*0.15),
-                        Icon(
+                       const Icon(
                           Icons.arrow_forward,
                           size: 30,
                           color: Colors.black
@@ -196,10 +196,10 @@ class Profile extends StatelessWidget {
                     ),
                     label:  Row(
                       children: [
-                        SizedBox(
+                       const SizedBox(
                           width: 8,
                         ),
-                        Text(
+                       const Text(
                           "Log Out",
                           style: TextStyle(
                             color: Colors.black,
@@ -208,7 +208,7 @@ class Profile extends StatelessWidget {
                         SizedBox
                         (width:screenwidth*0.34
                         ),
-                        Icon(
+                       const Icon(
                           Icons.arrow_forward,
                           color: Colors.black,
                           size: 30,
@@ -235,10 +235,10 @@ class Profile extends StatelessWidget {
                     ),
                     label:  Row(
                       children: [
-                        SizedBox(
+                       const SizedBox(
                           width: 8,
                         ),
-                        Text(
+                      const  Text(
                           "Delete Account",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
@@ -248,7 +248,7 @@ class Profile extends StatelessWidget {
                  SizedBox(
                   width: screenwidth*0.2,
                   ),
-                  Icon(
+                  const Icon(
                  Icons.arrow_forward,
                  size: 30,
                   color: Colors.red,
