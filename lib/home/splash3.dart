@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pills/home/logoptions.dart';
 import 'package:pills/home/navbar/fluidnavbar.dart';
 import 'package:pills/loginpage.dart';
 
@@ -97,47 +98,11 @@ class SpThree extends StatelessWidget {
               const SizedBox(
                 height: 50,
               ),
-              SizedBox(
-                width: 160,
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30)),
-                        backgroundColor: const Color.fromARGB(255, 7, 51, 88)),
-                    onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => LoginPage()));
-                    },
-                    child: const Text("Login / Sign up")),
-              ),
+             
               const SizedBox(
                 height: 30,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    height: 1,
-                    width: 130,
-                    color: Colors.grey,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 10),
-                    child: Text(
-                      "or",
-                      style: TextStyle(color: Colors.grey),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 10),
-                    child: Container(
-                      height: 1,
-                      width: 130,
-                      color: Colors.grey,
-                    ),
-                  ),
-                ],
-              ),
+            
               const SizedBox(
                 height: 20,
               ),
@@ -149,7 +114,7 @@ class SpThree extends StatelessWidget {
                             borderRadius: BorderRadius.circular(30)),
                         backgroundColor: Colors.teal[500]),
                     onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>const FluidNavBarDemo()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const OPtionPage()));
                     },
                     child: const Text("Get Started")),
               ),
