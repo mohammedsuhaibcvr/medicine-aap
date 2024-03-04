@@ -32,7 +32,7 @@ class _TimeDemoState extends State<TimeDemo> {
         }
       },
       child: Text(
-        "${selectedTime.format(context)}",
+         "${selectedTime.format(context)}",
         style: const TextStyle(color: Colors.white),
        ),
 );

@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:pills/admin.dart/login/login/adminlodin.dart';
+import 'package:pills/doctor/login/login.dart';
 import 'package:pills/loginpage.dart';
+import 'package:pills/shopkepper/shoplogin/login.dart';
+
 
 class OPtionPage extends StatelessWidget {
   const OPtionPage({super.key});
@@ -60,7 +63,9 @@ class OPtionPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                   backgroundColor: Colors.black),
-                onPressed: (){}, 
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>DoctorLoginPage()));
+                }, 
               child: const Text("DOCTOR")),
             ),
             const SizedBox(height: 10,),
@@ -71,7 +76,9 @@ class OPtionPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
                   backgroundColor: Colors.black),
-                onPressed: (){}, 
+                onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>ShopLoginPage()));
+                }, 
               child: const Text("PHARMACY")),
             )
           ],
