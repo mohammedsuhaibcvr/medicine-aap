@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
 
+
 import 'package:pills/home/splash.dart';
 
 
@@ -22,7 +23,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: false,
       ),
       debugShowCheckedModeBanner: false,
-      home: const PSplash(),
+      home: PSplash(),
     );
   }
 }
