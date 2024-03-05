@@ -31,10 +31,11 @@ class SpOne extends StatelessWidget {
               const SizedBox(
                 height: 140,
               ),
-              const CircleAvatar(
-                radius: 90,
-                child: Image(image: AssetImage("asset/Doctors.jpg"))
+             const CircleAvatar(
+                backgroundImage:AssetImage("asset/Doctors.jpg") ,
+
               ),
+               
               const SizedBox(
                 height: 25,
               ),

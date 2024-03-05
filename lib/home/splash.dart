@@ -47,7 +47,7 @@ class _PSplashState extends State<PSplash> {
          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Center(
-              child: Image.asset("asset/1024 PX.jpg",
+              child: Image.asset("asset/3.png",
               height: 300,
               width: 300,)
               

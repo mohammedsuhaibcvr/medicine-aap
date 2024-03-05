@@ -18,7 +18,7 @@ class ChangePass extends StatelessWidget {
           begin: Alignment.topCenter,
          // end: Alignment(0.8, 1),
           colors: <Color>[
-            Color(0xFFC5CAE9),
+           Color(0xFFC5CAE9),
              Color(0xFFC5CAE9),
             // Color(0xFF7986CB),
             // Color(0xFF5C6BC0),
