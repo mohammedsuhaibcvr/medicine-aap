@@ -1,16 +1,21 @@
 import 'package:flutter/material.dart';
+
 import 'package:pills/home/splash2.dart';
-import 'package:pills/home/splash3.dart';
+import 'package:pills/loginpage.dart';
+// import 'package:pill/splash/sp3.dart';
 
 class SpOne extends StatelessWidget {
   const SpOne({super.key});
 
   @override
   Widget build(BuildContext context) {
+   // double screenwidth = MediaQuery.of(context).size.width;
+            double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
-      body: Container(height: double.infinity,
-      width: double.infinity,
-       decoration: const BoxDecoration(
+      body: Container(
+        height: double.infinity,
+        width: double.infinity,
+         decoration: const BoxDecoration(
         gradient: LinearGradient(
       begin: Alignment.topCenter,
       end: Alignment(0.8, 1),
@@ -25,40 +30,38 @@ class SpOne extends StatelessWidget {
         )),
         child: Center(
           child: Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            //  mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
-                height: 140,
+              SizedBox(
+                height: screenheight * .19,
               ),
-             const CircleAvatar(
-                backgroundImage:AssetImage("asset/Doctors.jpg") ,
-
+              const CircleAvatar(
+                radius: 90,
+              backgroundColor: Colors.transparent,
+              backgroundImage: AssetImage("asset/UserCar.png"),
               ),
-               
-              const SizedBox(
-                height: 25,
+              SizedBox(
+                height: screenheight * .03,
               ),
               Text(
-                "Set Reminders.",
+                "Login As USER",
                 style: TextStyle(
                     fontSize: 19,
                     fontWeight: FontWeight.bold,
                     color: Colors.indigo[900]),
               ),
-              const SizedBox(
-                height: 10,
+              SizedBox(
+                height: screenheight *.01,
               ),
               const Text(
                 "Never forget to take ",
-                style: TextStyle(fontSize: 17, color: Colors.grey),
+                style: TextStyle(fontSize: 17, color: Colors.white),
               ),
               const Text(
                 "your medicines on time.",
-                style: TextStyle(fontSize: 17, color: Colors.grey),
+                style: TextStyle(fontSize: 17, color: Colors.white),
               ),
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: screenheight * .09,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -89,22 +92,32 @@ class SpOne extends StatelessWidget {
                           borderRadius: BorderRadius.circular(60),
                           color: Colors.grey[400]),
                     ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15),
+                    child: Container(
+                      height: 13,
+                      width: 13,
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(60),
+                          color: Colors.grey[400]),
+                    ),
                   )
                 ],
               ),
-              const SizedBox(
-                height: 50,
+              SizedBox(
+                height: screenheight * .06,
               ),
               SizedBox(
                 height: 40,
-                width: 120,
+                width: 110,
                 child: ElevatedButton.icon(
                   style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30)),
                       backgroundColor: Colors.teal[500]),
                   onPressed: () {
-                    Navigator.push(context,
+                    Navigator.pushReplacement(context,
                         MaterialPageRoute(builder: (context) => const SpTwo()));
                   },
                   label: const Text(
@@ -117,19 +130,33 @@ class SpOne extends StatelessWidget {
                   ),
                 ),
               ),
-              TextButton(
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=>const SpThree()));
-                  },
-                  child: const Text(
-                    "Skip",
-                    style: TextStyle(color: Colors.grey, fontSize: 17),
-               )
-            )  
+
+             SizedBox(
+                height: screenheight * .02,
+              ),
+
+              SizedBox(
+                height: 40,
+                width: 160,
+                child: ElevatedButton(
+                   style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(30)),
+                        backgroundColor: Colors.teal[500]),
+                  onPressed: (){
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                  }, 
+                  child:const Text("Login/SignUp",style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.bold,
+                  ),)
+                  ),
+              ),
+              
             ],
           ),
-        ), 
-      ),  
-);       
-}
+        ),
+      ),
+    );
+  }
 }
