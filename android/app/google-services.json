@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "405880404881",
+    "project_id": "medicine-app-77f58",
+    "storage_bucket": "medicine-app-77f58.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:405880404881:android:237f5765625b299b00f830",
+        "android_client_info": {
+          "package_name": "com.example.pills"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFjENMzjAlD12WSyjXHUKYvoC_Pi9h-b0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
